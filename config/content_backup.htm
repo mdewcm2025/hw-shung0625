@@ -61,7 +61,8 @@
 <li>最後在命令列中, 以 pip install flask flask_cors bs4 lxml pelican markdown 安裝 cmsimde 網際內容管理系統啟動所需的 Python 模組後, 此可攜系統中的 Python 3.13.2 套件已經可以用來維護個人作業倉儲與分組倉儲</li>
 <li>之後利用新版的<span> </span><a href="https://www.scintilla.org/SciTEDownload.html">SciTE</a>,<span> </span><a href="https://git-scm.com/downloads/win">Portablegit</a>,<span> </span><a href="https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html">PUTTY</a>,<span> </span><a href="https://github.com/ShareX/ShareX/releases">ShareX</a>,<span> </span><a href="https://www.debugmode.com/wink.html">Wink</a>,<span> </span><a href="https://solvespace.com/download.pl">Solvespace</a>,<span> </span><a href="https://learn.microsoft.com/zh-tw/sysinternals/downloads/zoomit">Zoomit</a>,<span> </span><a href="https://learn.microsoft.com/zh-tw/sysinternals/downloads/process-explorer#download">ProcessExplorer</a><span> </span>以及原有的 tmp 及 home_ipv6, 以新的 start_python313 啟動</li>
 </ol>
-<p><iframe allowfullscreen="allowfullscreen" height="314" src="//www.youtube.com/embed/6CHBdAuKNVw" width="560"></iframe></p><h2>task2</h2>
+<p><iframe allowfullscreen="allowfullscreen" height="314" src="//www.youtube.com/embed/6CHBdAuKNVw" width="560"></iframe></p>
+<h2>task2</h2>
 <h4>使用 SSH 協定執行作業倉儲的推送</h4>
 <p><a href="https://zh.wikipedia.org/zh-tw/Secure_Shell">SSH</a><span> </span>是一種加密的網路傳輸協定, PuTTY 則是可用於 Windows 環境的 SSH 協定工具, 其中支援遠端登入 (putty.exe) 與檔案傳輸工具 (psftp.exe).</p>
 <p>使用 PuTTY 所建立的公私鑰進行 Github push 認證的步驟:</p>
@@ -76,7 +77,7 @@
 <p>第五步:</p>
 <p>接著啟動 PuTTY 中的 putty.exe, 在 Host Name (or IP Address) 欄位填入 github.com, 並確認 Connection Type 選用 SSH, 表示要透過 SSH 加密協定連線到 github.com.</p>
 <p>第六步:</p>
-<p>接著在 putty.exe 視窗下方的 Saved Sessions 填入一組字串, 此字串就是之後要遠端登入 github.com 設定 push 連線 URL 的 session 名稱, 在此假設選擇 "mysession" 作為 session 名稱, 使用者可以自行選擇具有代表性的字串, 例如: 學號或簡短的英文姓名縮寫.</p>
+<p>接著在 putty.exe 視窗下方的 Saved Sessions 填入一組字串, 此字串就是之後要遠端登入 github.com 設定 push 連線 URL 的 session 名稱, 在此假設選擇 "mysession" 作為 session 名稱, 使用者可以自行選擇具有代表性的字串, 例如: 學號或簡短的英文姓名縮寫</p>
 <p>第七步:</p>
 <p>在 putty.exe 視窗中填入 github.com 與 "mysession" 名稱之後, 點擊 Save 之後, 此 session 設定就會被 Windows 操作系統存入該台電腦的 Registry 登錄檔案中的 HKEY_CURRENT_USER - SOFTWARE - SimonTatham 所在組態區. 此時可以在命令列中輸入 regedit 後進入登錄檔查看是否 mysession 已經存在.</p>
 <p>第八步:</p>
@@ -94,7 +95,11 @@
     fetch = +refs/heads/:refs/remotes/origin/</pre>
 <p>其中的 [remote "origin"] 表示當使用 git 指令中針對此倉儲 "origin" 是一個與遠端倉儲對應的字串代號, 代表其下兩項設定. url 代表此 "origin" 的倉儲連線網址, 而連線至此倉儲的協定是採遠端登入 (使用 Github 支援的 SSH 遠端登入協定), 且此遠端登入的帳號為 "git", 這是所有要使用 SSH 執行 git push 的用戶共同使用的登入帳號.</p>
 <p>url 設定中 "@" 之後的 "mysession" 就是宣告要使用此電腦登錄檔中所設定的 session 名稱 (代表要連線到 github.com, 且帶的 myprivatekey.ppk, 準備在登入流程中與 github.com 中 mdewcm2025 帳號下的 hw-scrum-1 倉儲擁有者 (或帶有 repo 管理權限的帳號) 所登錄的 public keys 進行認證比對, 一旦通過認證, git push 指令就可以成功將改版資料推送到指定的倉儲區域.</p>
-<h4><br/><br/></h4><h2>task2.5</h2>
+<h4><br/><br/></h4>
+<h2>task2.5</h2>
+<h3>ipv6</h3>
+<p><span>學員序號為 1的固定 IPv6 分配: 2001:288:6004:17:fff1:cc25:0000:a001</span></p>
+<p><span>本人學號4123145為44 故ipv6分配為 2001:288:6004:17:fff1:cc25:0000:a045</span></p>
 <p><a href="https://mdewcm2025.github.io/hw-scrum-1/downloads/brython.txt">brython.txt</a></p>
 <p>Fossil SCM 的應用</p>
 <p><a href="https://fossil-scm.org/">https://fossil-scm.org/</a> </p>
@@ -121,7 +126,8 @@
 <p><a href="http://229.cycu.org/VirtualBox-7.1.6-167084-Win.exe">VirtualBox-7.1.6-167084-Win.exe</a></p>
 <p><a href="http://229.cycu.org/Portable-Virtualbox.7z">Portable-Virtualbox.7z</a></p>
 <p>在同一個 Virtualbox 設定下, 使用同一個 .vdi, 必須要先修改其 UUID:</p>
-<p>"C:\Program Files\Oracle\VirtualBox\VBoxManage" internalcommands sethduuid c:\users\yen\downloads\win10.vdi</p><h2>task4</h2>
+<p>"C:\Program Files\Oracle\VirtualBox\VBoxManage" internalcommands sethduuid c:\users\yen\downloads\win10.vdi</p>
+<h2>task4</h2>
 <p></p>
 <h1>Midterm</h1>
 <p>2. 期中協同專案執行、簡報與報告 (三人一組) (30%)</p>
