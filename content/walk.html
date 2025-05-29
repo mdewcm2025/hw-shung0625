@@ -143,7 +143,35 @@ img.add_border {
           
         </header>
     <div id="tipue_search_content">Reeborg << <a href='Reeborg.html'>Previous</a> <a href='Tutorial.html'>Next</a> >> Tutorial<br /><h1>walk</h1>
-<br />Reeborg << <a href='Reeborg.html'>Previous</a> <a href='Tutorial.html'>Next</a> >> Tutorial</div>
+<p>到<a href="https://s104.cycu.org/reeborg" title="https://s104.cycu.org/reeborg">https://s104.cycu.org/reeborg</a>上後，找到Other worlds並點選，點擊下方Alone後，即可執行程式</p>
+<p>我利用ChatGPT幫我寫一個隨機路徑程式碼，永遠不會撞牆，直到走1000步為止</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">import random
+
+def turn_right():
+    for i in range(3):
+        turn_left()
+
+def random_turn():
+    choice = random.randint(0, 2)
+    if choice == 0:
+        turn_left()
+    elif choice == 1:
+        turn_right()
+    else:
+        pass  # 不轉彎
+
+def smart_move():
+    if front_is_clear():
+        move()
+    else:
+        turn_left()  # 撞牆就左轉
+
+# 主亂走迴圈（走 100 步內）
+for i in range(100):
+    smart_move()
+    random_turn()
+</pre>
+<p><iframe allowfullscreen="allowfullscreen" height="314" src="//www.youtube.com/embed/6hvFDCcm02U" width="560"></iframe></p><br />Reeborg << <a href='Reeborg.html'>Previous</a> <a href='Tutorial.html'>Next</a> >> Tutorial</div>
         
     <!-- footer -->
       <div class="container">
