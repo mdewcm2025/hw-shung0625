@@ -45,7 +45,57 @@
 <p style="padding-left: 60px;">Vmware <a href="https://blogs.vmware.com/cloud-foundation/2024/11/11/vmware-fusion-and-workstation-are-now-free-for-all-users/">最近宣布</a>適用於 Windows 及 Linux 的 Vmware Workstation Pro (<a href="https://docs.vmware.com/en/VMware-Workstation-Pro/17.6/rn/vmware-workstation-176-pro-release-notes/index.html">17.6</a>), 與適用於 MacOS 的 Vmware Fusion Pro 全面免費.</p>
 <p style="padding-left: 60px;"><a href="https://support.broadcom.com/group/ecx/productdownloads?subfamily=VMware+Workstation+Pro">下載 Vmware Workstation Pro</a> (For Windows and Linux) - 註冊帳號後下載 VMware-workstation-full-17.6.2.exe</p>
 <p style="padding-left: 60px;"><a href="https://support.broadcom.com/group/ecx/productdownloads?subfamily=VMware+Fusion">下載 Vmware Fusion Pro</a> (For Mac) - 註冊帳號後下載</p>
-<h2>HW2</h2>
+<p><span>操作步驟 (Windows)</span>:</p>
+<ol>
+<li>下載<span> </span><a href="http://229.cycu.org/win10.vdi">http://229.cycu.org/win10.vdi</a>, 在電腦中啟動 Virtualbox 後新增虛擬主機.</li>
+<li>採用 win10.vdi 建立虛擬主機後, 將網路設為橋接後啟動.</li>
+<li>登入後進入控制台利用個人的 IPv6 網址設定網路連線後, 在虛擬主機中下載安裝<span> </span><a href="https://nginx.org/en/download.html">nginx</a><span> </span>後測試是否可以正常從實體主機中連線.</li>
+<li><a href="http://229.cycu.org/certbot.7z">http://229.cycu.org/certbot.7z</a> 設定 https</li>
+<li>git clone <a href="https://github.com/mdecycu/reeborg.git">https://github.com/mdecycu/reeborg.git</a> 放入 nginx 系統中的 html 目錄</li>
+<li>利用 <a href="http://localhost/reeborg/?lang=en&amp;mode=python&amp;menu=/reeborg/worlds/menus/select_collection_en.json&amp;name=Alone&amp;url=/reeborg/worlds/tutorial_en/harvest1.json&amp;editor=https://mdewcm2025.github.io/hw-scrum-1/python/harvest1.py">http://localhost/reeborg/?lang=en&amp;mode=python&amp;menu=/reeborg/worlds/menus/select_collection_en.json&amp;name=Alone&amp;url=/reeborg/worlds/tutorial_en/harvest1.json&amp;editor=https://mdewcm2025.github.io/hw-scrum-1/python/harvest1.py</a> 進行測試.</li>
+<li>就機械設計的專業而言, 之後可以用來開發類似: <a href="https://github.com/youandvern/efficalc">https://github.com/youandvern/efficalc</a> </li>
+</ol>
+<p></p>
+<p><iframe allowfullscreen="allowfullscreen" height="314" src="//www.youtube.com/embed/tV6sG5Z29Us" width="560"></iframe></p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">def turn_right():
+    for _ in range(3):
+        turn_left()
+
+def pick_carrot():
+    while object_here():
+        take()
+
+def move_and_pick():
+    move()
+    pick_carrot()
+
+# 移動到左下角的蘿蔔區 (3,3)
+move()
+move()
+turn_left()
+for _ in range(2):
+    move()
+turn_right()
+
+# 開始「之」字形拔蘿蔔（6行）
+for row in range(6):
+    for _ in range(5):
+        pick_carrot()
+        move()
+    pick_carrot()
+    if row &lt; 5:
+        if row % 2 == 0:
+            turn_left()
+            move()
+            turn_left()
+        else:
+            turn_right()
+            move()
+            turn_right()
+
+done()
+</pre>
+<p><img alt="" height="366" src="/images/螢幕擷取畫面 2025-06-12 101427.png" width="800"/></p><h2>HW2</h2>
 <p>作業二 (20%): 在各種不同環境下的操作系統中配置 <a href="https://mde.tw/reeborg/world.html">Reeborg's world</a> (<a href="https://github.com/mdecycu/reeborg">原始碼</a>)</p>
 <h1>tasks</h1>
 <h2>task1</h2>
