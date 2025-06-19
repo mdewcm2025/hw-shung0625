@@ -272,8 +272,53 @@ for i in range(100):
 <p style="padding-left: 60px;">用Reeborg拔蘿蔔</p>
 <p style="padding-left: 60px;">第一步:點開我的連結 到我的個人Reeborg</p>
 <p style="padding-left: 60px;"><a href="https://mdewcm2025.github.io/hw-shung0625/reeborg/?lang=en&amp;mode=python&amp;menu=%2Fhw-41323145%2Freeborg%2Fworlds%2Fmenus%2Fselect_collection_en.json&amp;name=&amp;url=null&amp;editor=undefined">https://mdewcm2025.github.io/hw-shung0625/reeborg/?lang=en&amp;mode=python&amp;menu=%2Fhw-41323145%2Freeborg%2Fworlds%2Fmenus%2Fselect_collection_en.json&amp;name=&amp;url=null&amp;editor=undefined</a></p>
-<p style="padding-left: 60px;">第二步:在Reeborg裡匯入已壓縮的7z檔案</p>
-<p style="padding-left: 60px;"><a href="/downloads/41323145 (2).7z">/downloads/41323145 (2).7z</a></p><h1>Brython</h1>
+<p style="padding-left: 60px;"><img alt="" height="400" src="/images/拔蘿蔔網站 2025-06-19 113752.png" width="800"/></p>
+<p style="padding-left: 60px;">第二步:解壓縮並在Reeborg裡匯入檔案</p>
+<p style="padding-left: 60px;"><a href="/downloads/41323145 (2).7z">/downloads/41323145 (2).7z</a></p>
+<p style="padding-left: 60px;"><img alt="" height="408" src="/images/41323145 2025-06-19 113907.png" width="800"/></p>
+<p style="padding-left: 60px;">匯入後即可執行程式</p>
+<p style="padding-left: 60px;">下列為執行完程式碼後的路徑</p>
+<p style="padding-left: 60px;"><img alt="" height="392" src="/images/路徑2025-06-19 113907.png" width="800"/></p>
+<p style="padding-left: 60px;"></p>
+<p style="padding-left: 60px;">這裡列出路徑之程式碼</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">def turn_right():
+    for _ in range(3):
+        turn_left()
+ 
+def pick_carrot():
+    while object_here():
+        take()
+ 
+def move_and_pick():
+    move()
+    pick_carrot()
+ 
+# 移動到左下角的蘿蔔區 (3,3)
+move()
+move()
+turn_left()
+for _ in range(2):
+    move()
+turn_right()
+ 
+# 開始「之」字形拔蘿蔔（6行）
+for row in range(6):
+    for _ in range(5):
+        pick_carrot()
+        move()
+    pick_carrot()
+    if row &lt; 5:
+        if row % 2 == 0:
+            turn_left()
+            move()
+            turn_left()
+        else:
+            turn_right()
+            move()
+            turn_right()
+ 
+done()</pre>
+<p style="padding-left: 60px;"></p><h1>Brython</h1>
 <p><button id="add1to100">1 add to 100</button></p>
 <!-- 導入 brython 程式庫 -->
 <p>
